@@ -1,0 +1,632 @@
+[
+  {
+    "day": "1",
+    "theme": "Введение в JS. Установка среды разработки",
+    "task": "Установить VSCode и открыть DevTools в браузере. Написать первый скрипт",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Introduction' target='_blank'>MDN Introduction</a>",
+    "example": "console.log(\"Hello World\");"
+  },
+  {
+    "day": "2",
+    "theme": "Переменные и типы данных",
+    "task": "Объявить переменные с let, const, var. Определить их типы",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let' target='_blank'>Variables MDN</a>",
+    "example": "let age = 25; const name = \"John\";"
+  },
+  {
+    "day": "3",
+    "theme": "Операторы и выражения",
+    "task": "Выполнить математические операции, сравнения и логические проверки",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Expressions_and_operators' target='_blank'>Expressions and Operators</a>",
+    "example": "let result = 5 + 3; console.log(result > 7);"
+  },
+  {
+    "day": "4",
+    "theme": "Условные конструкции",
+    "task": "Написать условия if, else if, else, тернарный оператор",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else' target='_blank'>Conditional Statements</a>",
+    "example": "let age = 18; let access = age >= 18 ? \"allowed\" : \"denied\";"
+  },
+  {
+    "day": "5",
+    "theme": "Циклы",
+    "task": "Использовать for, while, do...while для вывода чисел",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Loops_and_iteration' target='_blank'>Loops and iteration</a>",
+    "example": "for (let i = 1; i <= 10; i++) { console.log(i); }"
+  },
+  {
+    "day": "6",
+    "theme": "Массивы",
+    "task": "Создать массивы, изменять элементы, использовать методы push, pop, shift, unshift",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array' target='_blank'>Array MDN</a>",
+    "example": "let fruits = [\"apple\", \"banana\"]; fruits.push(\"orange\");"
+  },
+  {
+    "day": "7",
+    "theme": "Методы массивов",
+    "task": "Использовать map, filter, forEach, find",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods' target='_blank'>Array methods</a>",
+    "example": "let nums = [1,2,3]; let doubled = nums.map(n => n * 2);"
+  },
+  {
+    "day": "8",
+    "theme": "Строки",
+    "task": "Работать с методами строк: toUpperCase, slice, split, indexOf",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String' target='_blank'>String MDN</a>",
+    "example": "let text = \"hello\"; let upper = text.toUpperCase();"
+  },
+  {
+    "day": "9",
+    "theme": "Функции",
+    "task": "Создать функции через function, function expression, arrow function",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions' target='_blank'>Functions</a>",
+    "example": "const sum = (a, b) => a + b;"
+  },
+  {
+    "day": "10",
+    "theme": "Параметры и аргументы функций",
+    "task": "Передавать параметры, работать с arguments",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank'>Function parameters</a>",
+    "example": "function sum(...nums) { return nums.reduce((a,b)=>a+b); }"
+  },
+  {
+    "day": "11",
+    "theme": "Объекты",
+    "task": "Создать объект, добавлять/удалять свойства, использовать методы",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Working_with_objects' target='_blank'>Working with objects</a>",
+    "example": "let user = { name: \"Alice\", greet() { console.log(\"Hi\") } };"
+  },
+  {
+    "day": "12",
+    "theme": "Работа с объектами",
+    "task": "Использовать Object.keys, values, entries, деструктуризацию",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object' target='_blank'>Object static methods</a>",
+    "example": "let keys = Object.keys(user);"
+  },
+  {
+    "day": "13",
+    "theme": "this и контекст выполнения",
+    "task": "Изучить работу this внутри функций и методов",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this' target='_blank'>this MDN</a>",
+    "example": "obj.method = function() { console.log(this); }"
+  },
+  {
+    "day": "14",
+    "theme": "ООП в JS",
+    "task": "Создать конструкторы, работать с прототипами",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Inheritance_and_the_prototype_chain' target='_blank'>Inheritance and the prototype chain</a>",
+    "example": "function Person(name) { this.name = name; }"
+  },
+  {
+    "day": "15",
+    "theme": "Классы и наследование",
+    "task": "Создать классы через class, использовать extends, super",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes' target='_blank'>Classes MDN</a>",
+    "example": "class Student extends Person { constructor(name, grade) { super(name); this.grade = grade; } }"
+  },
+  {
+    "day": "16",
+    "theme": "DOM и события",
+    "task": "Получить элементы DOM, повесить слушатель событий",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents' target='_blank'>DOM Manipulation</a>",
+    "example": "document.getElementById(\"btn\").addEventListener(\"click\", () => alert(\"Clicked\"));"
+  },
+  {
+    "day": "17",
+    "theme": "Работа с атрибутами и стилями",
+    "task": "Изменять классы, стили, атрибуты элементов",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/API/Element/classList' target='_blank'>Element.classList</a>",
+    "example": "element.style.color = \"red\"; element.classList.add(\"active\");"
+  },
+  {
+    "day": "18",
+    "theme": "События мыши и клавиатуры",
+    "task": "Реагировать на клик, нажатие клавиш, наведение",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/Events' target='_blank'>Event reference</a>",
+    "example": "document.addEventListener(\"keydown\", e => console.log(e.key));"
+  },
+  {
+    "day": "19",
+    "theme": "Формы и валидация",
+    "task": "Получить данные формы, проверить заполненность полей",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Learn/Forms/Form_validation' target='_blank'>Form handling</a>",
+    "example": "const form = document.querySelector(\"form\"); form.addEventListener(\"submit\", (e) => { e.preventDefault(); });"
+  },
+  {
+    "day": "20",
+    "theme": "JSON и работа с данными",
+    "task": "Преобразовать объект в JSON и обратно",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON' target='_blank'>JSON MDN</a>",
+    "example": "let json = JSON.stringify(obj); let obj = JSON.parse(json);"
+  },
+  {
+    "day": "21",
+    "theme": "Промисы",
+    "task": "Понять, что такое промис, как он работает",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise' target='_blank'>Promise MDN</a>",
+    "example": "let p = new Promise((resolve, reject) => resolve(\"done\"));"
+  },
+  {
+    "day": "22",
+    "theme": "then/catch/finally",
+    "task": "Обрабатывать результат промиса, ошибки",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/then' target='_blank'>Promise.prototype.then()</a>",
+    "example": "p.then(res => console.log(res)).catch(err => console.error(err));"
+  },
+  {
+    "day": "23",
+    "theme": "async/await",
+    "task": "Переписать цепочки промисов через async/await",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/async_function' target='_blank'>async function</a>",
+    "example": "async function getData() { try { let res = await fetch(url); } catch (err) { } }"
+  },
+  {
+    "day": "24",
+    "theme": "Fetch API",
+    "task": "Отправить GET-запрос к публичному API",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch' target='_blank'>Using Fetch</a>",
+    "example": "fetch('https://jsonplaceholder.typicode.com/posts') .then(res => res.json())"
+  },
+  {
+    "day": "25",
+    "theme": "POST-запросы",
+    "task": "Отправить данные на сервер с помощью fetch",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch#body' target='_blank'>POST request with fetch</a>",
+    "example": "fetch('/api', { method: 'POST', body: JSON.stringify(data) })"
+  },
+  {
+    "day": "26",
+    "theme": "localStorage и sessionStorage",
+    "task": "Сохранять и читать данные из localStorage",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API' target='_blank'>Web Storage API</a>",
+    "example": "localStorage.setItem(\"name\", \"John\"); let name = localStorage.getItem(\"name\");"
+  },
+  {
+    "day": "27",
+    "theme": "Работа с датой и временем",
+    "task": "Получить текущую дату, форматировать её",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date' target='_blank'>Date MDN</a>",
+    "example": "let now = new Date(); console.log(now.toLocaleDateString());"
+  },
+  {
+    "day": "28",
+    "theme": "Регулярные выражения",
+    "task": "Проверить email, номер телефона с помощью регулярных выражений",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_expressions' target='_blank'>Regular Expressions</a>",
+    "example": "/^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$/.test(email)"
+  },
+  {
+    "day": "29",
+    "theme": "Error Handling",
+    "task": "Использовать try/catch, генерировать собственные ошибки",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Control_flow_and_error_handling' target='_blank'>Error handling</a>",
+    "example": "try { throw new Error(\"Something went wrong\"); } catch (err) { console.error(err); }"
+  },
+  {
+    "day": "30",
+    "theme": "Мини-проект: Калькулятор",
+    "task": "Реализовать простой калькулятор с интерфейсом",
+    "resources": "-",
+    "example": "function calculate(op) { ... }"
+  },
+  {
+    "day": "31",
+    "theme": "Введение в Vue. CDN-подключение",
+    "task": "Подключить Vue через CDN, вывести Hello World с помощью интерполяции",
+    "resources": "<a href='https://vuejs.org/guide/quick-start.html#using-vue-from-cdn' target='_blank'>Vue CDN Guide</a>",
+    "example": "{{ message }} в шаблоне, new Vue({ data: { message: 'Hello' } })"
+  },
+  {
+    "day": "32",
+    "theme": "Основы синтаксиса",
+    "task": "Использовать директивы v-text, v-html, v-show",
+    "resources": "<a href='https://vuejs.org/guide/essentials/template-syntax.html' target='_blank'>Vue Template Syntax</a>",
+    "example": "<p v-text=\"text\"></p>, <p v-html=\"htmlContent\"></p>"
+  },
+  {
+    "day": "33",
+    "theme": "Реактивные данные",
+    "task": "Создать реактивное состояние с помощью data, изменять его",
+    "resources": "<a href='https://vuejs.org/guide/essentials/reactivity-fundamentals.html' target='_blank'>Reactivity Fundamentals</a>",
+    "example": "data() { return { count: 0 } }, count++ при клике"
+  },
+  {
+    "day": "34",
+    "theme": "Условия и циклы",
+    "task": "Отображать элементы по условию, выводить список с v-for",
+    "resources": "<a href='https://vuejs.org/guide/essentials/conditional.html' target='_blank'>Conditional Rendering</a>, <a href='https://vuejs.org/guide/essentials/list.html' target='_blank'>List Rendering</a>",
+    "example": "<div v-if=\"isVisible\">Visible</div>, <li v-for=\"item in items\">{{ item }}</li>"
+  },
+  {
+    "day": "35",
+    "theme": "События и методы",
+    "task": "Обрабатывать события кнопок, вызывать методы",
+    "resources": "<a href='https://vuejs.org/guide/essentials/event-handling.html' target='_blank'>Event Handling</a>",
+    "example": "@click=\"increment\", methods: { increment() { this.count++ } }"
+  },
+  {
+    "day": "36",
+    "theme": "Двустороннее связывание",
+    "task": "Использовать v-model для формы",
+    "resources": "<a href='https://vuejs.org/guide/essentials/forms.html' target='_blank'>Form Input Bindings</a>",
+    "example": "<input v-model=\"username\">, data: { username: '' }"
+  },
+  {
+    "day": "37",
+    "theme": "Вычисляемые свойства",
+    "task": "Использовать computed для фильтрации или преобразования данных",
+    "resources": "<a href='https://vuejs.org/guide/essentials/computed.html' target='_blank'>Computed Properties</a>",
+    "example": "computed: { filteredList() { return list.filter(...) } }"
+  },
+  {
+    "day": "38",
+    "theme": "Наблюдатели",
+    "task": "Использовать watch для отслеживания изменений",
+    "resources": "<a href='https://vuejs.org/guide/essentials/watchers.html' target='_blank'>Watchers</a>",
+    "example": "watch: { searchQuery(newVal, oldVal) { ... } }"
+  },
+  {
+    "day": "39",
+    "theme": "Компоненты",
+    "task": "Создать первый компонент, зарегистрировать и использовать",
+    "resources": "<a href='https://vuejs.org/guide/components/registration.html' target='_blank'>Components Basics</a>",
+    "example": "const MyComponent = { template: '<p>Hello</p>' }; components: { MyComponent }"
+  },
+  {
+    "day": "40",
+    "theme": "Передача данных в компоненты (props)",
+    "task": "Передавать данные из родителя в дочерний компонент",
+    "resources": "<a href='https://vuejs.org/guide/components/props.html' target='_blank'>Props</a>",
+    "example": "props: ['title'], <MyComponent title=\"Home\" />"
+  },
+  {
+    "day": "41",
+    "theme": "Передача событий из компонента ($emit)",
+    "task": "Отправлять события из дочернего компонента",
+    "resources": "<a href='https://vuejs.org/guide/components/events.html' target='_blank'>Component Events</a>",
+    "example": "this.$emit('update', value), @update=\"handleUpdate\""
+  },
+  {
+    "day": "42",
+    "theme": "Жизненный цикл компонента",
+    "task": "Изучить хуки created, mounted, updated, destroyed",
+    "resources": "<a href='https://vuejs.org/guide/essentials/lifecycle.html' target='_blank'>Instance Lifecycle Hooks</a>",
+    "example": "mounted() { console.log('Component mounted'); }"
+  },
+  {
+    "day": "43",
+    "theme": "Директивы",
+    "task": "Создать собственную директиву, например, автофокус",
+    "resources": "<a href='https://vuejs.org/guide/reusability/custom-directives.html' target='_blank'>Custom Directives</a>",
+    "example": "v-focus, directives: { focus: { mounted(el) { el.focus(); } } }"
+  },
+  {
+    "day": "44",
+    "theme": "Классы и стили",
+    "task": "Управлять классами и стилями через объекты и массивы",
+    "resources": "<a href='https://vuejs.org/guide/essentials/class-and-style.html' target='_blank'>Class and Style Bindings</a>",
+    "example": ":class=\"{ active: isActive }\", :style=\"{ color: textColor }\""
+  },
+  {
+    "day": "45",
+    "theme": "Axios и работа с API",
+    "task": "Получать данные с внешнего API и отображать их",
+    "resources": "<a href='https://axios-http.com/docs/intro' target='_blank'>HTTP Requests with Axios</a>",
+    "example": "axios.get('/api/users').then(res => this.users = res.data)"
+  },
+  {
+    "day": "46",
+    "theme": "Vuex – основы",
+    "task": "Настроить хранилище Vuex, работать с state и getters",
+    "resources": "<a href='https://vuex.vuejs.org/guide/' target='_blank'>Vuex Core Concepts</a>",
+    "example": "store.state.count, getters.totalPrice"
+  },
+  {
+    "day": "47",
+    "theme": "Actions и Mutations",
+    "task": "Менять состояние через mutations, асинхронные действия через actions",
+    "resources": "<a href='https://vuex.vuejs.org/guide/state.html' target='_blank'>Vuex State Updates</a>",
+    "example": "commit('increment'), dispatch('fetchData')"
+  },
+  {
+    "day": "48",
+    "theme": "Modules в Vuex",
+    "task": "Разделить store на модули для масштабирования",
+    "resources": "<a href='https://vuex.vuejs.org/guide/modules.html' target='_blank'>Vuex Modules</a>",
+    "example": "modules: { cart, user }"
+  },
+  {
+    "day": "49",
+    "theme": "Vue Router – маршруты",
+    "task": "Настроить маршрутизацию, создать несколько страниц",
+    "resources": "<a href='https://router.vuejs.org/' target='_blank'>Vue Router Guide</a>",
+    "example": "path: '/about', component: AboutView"
+  },
+  {
+    "day": "50",
+    "theme": "Динамические маршруты",
+    "task": "Использовать параметры в URL (/user/:id)",
+    "resources": "<a href='https://router.vuejs.org/guide/advanced/lazy-loading.html' target='_blank'>Dynamic Routes</a>",
+    "example": "$route.params.id, path: '/user/:id'"
+  },
+  {
+    "day": "51",
+    "theme": "Lazy loading",
+    "task": "Подгружать страницы только при необходимости",
+    "resources": "<a href='https://router.vuejs.org/guide/advanced/lazy-loading.html' target='_blank'>Lazy Loading Routes</a>",
+    "example": "component: () => import('../views/About.vue')"
+  },
+  {
+    "day": "52",
+    "theme": "Mixins",
+    "task": "Создать миксины для повторяющейся логики",
+    "resources": "<a href='https://vuejs.org/guide/scaling-up/project-structure.html#mixins' target='_blank'>Mixins</a>",
+    "example": "mixins: [formMixin]"
+  },
+  {
+    "day": "53",
+    "theme": "Composition API – базовые понятия",
+    "task": "Переписать компонент с Options API на Composition API",
+    "resources": "<a href='https://vuejs.org/guide/scaling-up/project-structure.html' target='_blank'>Composition API</a>",
+    "example": "setup() { const count = ref(0); return { count } }"
+  },
+  {
+    "day": "54",
+    "theme": "Composition API – хуки и кастомные функции",
+    "task": "Использовать onMounted, watch, ref, reactive",
+    "resources": "<a href='https://vuejs.org/api/composition-api-lifecycle.html' target='_blank'>Composition API Lifecycle</a>",
+    "example": "onMounted(() => { ... })"
+  },
+  {
+    "day": "55",
+    "theme": "Пагинация и фильтрация",
+    "task": "Реализовать клиентскую пагинацию и фильтрацию",
+    "resources": "-",
+    "example": "computed: { paginatedItems() { ... } }"
+  },
+  {
+    "day": "56",
+    "theme": "Мини-проект: интернет-магазин",
+    "task": "Создать магазин с каталогом товаров и корзиной",
+    "resources": "-",
+    "example": "-"
+  },
+  {
+    "day": "57",
+    "theme": "Vue CLI – создание проекта",
+    "task": "Установить Vue CLI, создать новый проект",
+    "resources": "<a href='https://cli.vuejs.org/' target='_blank'>Vue CLI Docs</a>",
+    "example": "vue create my-app"
+  },
+  {
+    "day": "58",
+    "theme": "Структура проекта Vue CLI",
+    "task": "Разобраться с файловой структурой проекта",
+    "resources": "-",
+    "example": "src/main.js, App.vue, components/, views/"
+  },
+  {
+    "day": "59",
+    "theme": "Стилизация компонентов",
+    "task": "Использовать scoped, CSS modules, глобальные стили",
+    "resources": "<a href='https://vuejs.org/guide/scaling-up/project-structure.html#single-file-component-specific-rules' target='_blank'>Scoped Styles</a>",
+    "example": "<style scoped>.btn { color: red }</style>"
+  },
+  {
+    "day": "60",
+    "theme": "UI-библиотеки",
+    "task": "Подключить Vuetify или Element Plus",
+    "resources": "<a href='https://vuetifyjs.com/en/getting-started/quick-start/' target='_blank'>Vuetify Getting Started</a>, <a href='https://element-plus.org/#/en-US' target='_blank'>Element Plus</a>",
+    "example": "import { Button } from 'element-plus'; app.use(Button)"
+  },
+  {
+    "day": "61",
+    "theme": "Тестирование Vue-компонентов",
+    "task": "Написать тесты с использованием Jest и Vue Test Utils",
+    "resources": "<a href='https://vuejs.org/guide/scaling-up/project-structure.html#testing' target='_blank'>Vue Testing</a>",
+    "example": "test('renders correctly', () => { expect(wrapper.text()).toContain('Hello') })"
+  },
+  {
+    "day": "62",
+    "theme": "Деплой проекта",
+    "task": "Залить проект на Netlify, Vercel или GitHub Pages",
+    "resources": "<a href='https://vuejs.org/guide/best-practices/deployment.html' target='_blank'>Deploying Vue App</a>",
+    "example": "npm run build, загрузить dist-папку на хостинг"
+  },
+  {
+    "day": "63",
+    "theme": "Анимации и переходы",
+    "task": "Добавить анимации между маршрутами и элементами",
+    "resources": "<a href='https://vuejs.org/guide/built-ins/transition.html' target='_blank'>Transitions</a>",
+    "example": "<Transition name=\"fade\"><div v-if=\"show\">Text</div></Transition>"
+  },
+  {
+    "day": "64",
+    "theme": "SEO и метатеги",
+    "task": "Добавить тайтлы и описания страниц",
+    "resources": "<a href='https://vue-meta.vercel.app/guide/' target='_blank'>Vue Meta</a>",
+    "example": "metaInfo: { title: 'Home' }"
+  },
+  {
+    "day": "65",
+    "theme": "Internationalization (i18n)",
+    "task": "Добавить поддержку нескольких языков",
+    "resources": "<a href='https://vue-i18n.intlify.dev/' target='_blank'>Vue I18n</a>",
+    "example": "$t('welcome.message')"
+  },
+  {
+    "day": "66",
+    "theme": "PWA и Service Workers",
+    "task": "Преобразовать проект в Progressive Web App",
+    "resources": "<a href='https://cli.vuejs.org/core-plugins/pwa.html' target='_blank'>Vue PWA</a>",
+    "example": "vue add pwa"
+  },
+  {
+    "day": "67",
+    "theme": "Vuex Persist",
+    "task": "Сохранять состояние в localStorage",
+    "resources": "<a href='https://www.npmjs.com/package/vuex-persist' target='_blank'>Vuex-Persist</a>",
+    "example": "plugins: [new VuexPersist().plugin]"
+  },
+  {
+    "day": "68",
+    "theme": "Роутинг с авторизацией",
+    "task": "Защищать маршруты, проверять наличие токена",
+    "resources": "-",
+    "example": "beforeEach((to, from, next) => { if (auth) next(); else next('/login') })"
+  },
+  {
+    "day": "69",
+    "theme": "WebSocket",
+    "task": "Подключиться к чату или обновлениям в реальном времени",
+    "resources": "<a href='https://socket.io/' target='_blank'>Socket.io</a>",
+    "example": "socket.on('message', msg => this.messages.push(msg))"
+  },
+  {
+    "day": "70",
+    "theme": "SVG и графика",
+    "task": "Добавить диаграммы с D3.js или Chart.js",
+    "resources": "<a href='https://d3js.org/' target='_blank'>D3.js</a>, <a href='https://www.chartjs.org/' target='_blank'>Chart.js</a>",
+    "example": "new Chart(ctx, config)"
+  },
+  {
+    "day": "71",
+    "theme": "Аутентификация",
+    "task": "Реализовать вход/выход с JWT",
+    "resources": "-",
+    "example": "localStorage.setItem('token', token)"
+  },
+  {
+    "day": "72",
+    "theme": "Пагинация с API",
+    "task": "Запрашивать данные с сервера постранично",
+    "resources": "-",
+    "example": "axios.get(`/api/data?page=${currentPage}`)"
+  },
+  {
+    "day": "73",
+    "theme": "Фильтрация и сортировка",
+    "task": "Реализовать фильтрацию по полям и сортировку",
+    "resources": "-",
+    "example": "computed: { sortedProducts() { return _.orderBy(this.products, 'price') } }"
+  },
+  {
+    "day": "74",
+    "theme": "Уведомления и модальные окна",
+    "task": "Добавить систему уведомлений и модальных окон",
+    "resources": "<a href='https://github.com/Maronato/vue-toastification' target='_blank'>Vue Toastification</a>",
+    "example": "toast.success(\"Item added\")"
+  },
+  {
+    "day": "75",
+    "theme": "Корзина товаров",
+    "task": "Реализовать добавление, удаление и подсчёт суммы",
+    "resources": "-",
+    "example": "cart: [{ id, qty, price }, ...], total = cart.reduce(...)"
+  },
+  {
+    "day": "76",
+    "theme": "Checkout и оплата",
+    "task": "Интегрировать Stripe/PayPal (макет)",
+    "resources": "<a href='https://stripe.com/docs/stripe-js' target='_blank'>Stripe Elements</a>",
+    "example": "elements.create('card')"
+  },
+  {
+    "day": "77",
+    "theme": "Админ-панель",
+    "task": "Создать CRUD для управления товарами",
+    "resources": "-",
+    "example": "POST /products, PUT /products/:id, DELETE /products/:id"
+  },
+  {
+    "day": "78",
+    "theme": "Дашборд",
+    "task": "Добавить графики и аналитику",
+    "resources": "<a href='https://apexcharts.com/docs/vue-charts/' target='_blank'>Vue ApexCharts</a>",
+    "example": "<apexchart :options=\"...\" :series=\"...\"/>"
+  },
+  {
+    "day": "79",
+    "theme": "Личный кабинет",
+    "task": "Реализовать редактирование профиля пользователя",
+    "resources": "-",
+    "example": "PATCH /users/me"
+  },
+  {
+    "day": "80",
+    "theme": "История заказов",
+    "task": "Отображать список покупок",
+    "resources": "-",
+    "example": "GET /orders?userId=..."
+  },
+  {
+    "day": "81",
+    "theme": "Push-уведомления",
+    "task": "Настроить уведомления о новых заказах",
+    "resources": "<a href='https://firebase.google.com/docs/cloud-messaging' target='_blank'>Firebase Cloud Messaging</a>",
+    "example": "messaging.onMessage(payload => toast.info(payload.notification.title))"
+  },
+  {
+    "day": "82",
+    "theme": "IndexedDB и кэширование",
+    "task": "Реализовать локальное кэширование данных",
+    "resources": "<a href='https://developer.mozilla.org/ru/docs/Web/API/IndexedDB_API' target='_blank'>IndexedDB API</a>",
+    "example": "indexedDB.open('my-db')"
+  },
+  {
+    "day": "83",
+    "theme": "Производительность и оптимизация",
+    "task": "Применить lazy loading, memoization, code splitting",
+    "resources": "<a href='https://vuejs.org/guide/best-practices/performance.html' target='_blank'>Performance Tips</a>",
+    "example": "v-once, keep-alive, Suspense"
+  },
+  {
+    "day": "84",
+    "theme": "Итоговый проект: SPA",
+    "task": "Создать полноценное приложение: интернет-магазин с авторизацией, корзиной и админкой",
+    "resources": "-",
+    "example": "-"
+  },
+  {
+    "day": "85",
+    "theme": "Работа с формами и валидацией",
+    "task": "Реализовать форму регистрации с валидацией на стороне клиента",
+    "resources": "<a href='https://vee-validate.logaretm.com/v4/' target='_blank'>VeeValidate</a>",
+    "example": "v-validate=\"required|email\""
+  },
+  {
+    "day": "86",
+    "theme": "JWT-авторизация",
+    "task": "Реализовать систему входа/выхода с токенами JWT",
+    "resources": "-",
+    "example": "axios.post('/login', { email, password }).then(res => localStorage.setItem('token', res.token))"
+  },
+  {
+    "day": "87",
+    "theme": "Роутинг с авторизацией",
+    "task": "Создать защищённые маршруты, доступные только авторизованным пользователям",
+    "resources": "<a href='https://router.vuejs.org/guide/advanced/navigation-guards.html' target='_blank'>Vue Router Navigation Guards</a>",
+    "example": "beforeEach((to, from, next) => { if (store.getters.isAuthenticated) next(); else next('/login') })"
+  },
+  {
+    "day": "88",
+    "theme": "Интернационализация (i18n)",
+    "task": "Добавить поддержку нескольких языков в приложение",
+    "resources": "<a href='https://vue-i18n.intlify.dev/guide/' target='_blank'>Vue I18n Documentation</a>",
+    "example": "$t('buttons.submit'), $t('welcome.message')"
+  },
+  {
+    "day": "89",
+    "theme": "Темизация и динамическая смена темы",
+    "task": "Реализовать возможность переключения между светлой и тёмной темой",
+    "resources": "-",
+    "example": "computed: { themeClass() { return this.darkMode ? 'dark' : 'light' } }, data: { darkMode: false }"
+  },
+  {
+    "day": "90",
+    "theme": "Финальный проект — интернет-магазин",
+    "task": "Собрать всё вместе: каталог товаров, корзина, оплата, админка, авторизация, фильтрация, пагинация, локализация",
+    "resources": "-",
+    "example": "-"
+  }
+]

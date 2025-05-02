@@ -1,0 +1,86 @@
+[
+  {
+    "id": "htmlcss",
+    "title": "HTML & CSS",
+    "items": [
+      {
+        "name": "HTML Academy",
+        "url": "https://htmlacademy.ru/",
+        "description": "Интерактивные курсы по верстке"
+      },
+      {
+        "name": "CSS Tricks",
+        "url": "https://css-tricks.com/",
+        "description": "Полезные статьи и примеры по CSS"
+      },
+      {
+        "name": "Learn CSS Flexbox",
+        "url": "https://flexboxfroggy.com/",
+        "description": "Игра для изучения Flexbox"
+      }
+    ]
+  },
+  {
+    "id": "js",
+    "title": "JavaScript",
+    "items": [
+      {
+        "name": "MDN JavaScript Guide",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide",
+        "description": "Официальное руководство на русском"
+      },
+      {
+        "name": "javascript.info",
+        "url": "https://javascript.info/",
+        "description": "Пошаговый курс с примерами"
+      },
+      {
+        "name": "JSBites",
+        "url": "https://github.com/torresalex/JSBites",
+        "description": "Короткие уроки по JS в формате чеклистов"
+      }
+    ]
+  },
+  {
+    "id": "vue",
+    "title": "Vue.js",
+    "items": [
+      {
+        "name": "Официальная документация Vue",
+        "url": "https://vuejs.org/guide/introduction.html",
+        "description": "Полное руководство по Vue 3"
+      },
+      {
+        "name": "Vue School",
+        "url": "https://vueschool.io/",
+        "description": "Видеоуроки по Vue бесплатно и платно"
+      },
+      {
+        "name": "Vue Mastery",
+        "url": "https://www.vuemastery.com/",
+        "description": "Видеокурсы по Vue на английском"
+      }
+    ]
+  },
+  {
+    "id": "career",
+    "title": "Развитие и карьера",
+    "items": [
+      {
+        "name": "freeCodeCamp",
+        "url": "https://www.freecodecamp.org/",
+        "description": "Бесплатные курсы по фронтенду и не только"
+      },
+      {
+        "name": "The Odin Project",
+        "url": "https://www.theodinproject.com/",
+        "description": "Проектное обучение фронтенду"
+      },
+      {
+        "name": "YouTube - Веб-дизайн для начинающих",
+        "url": "https://www.youtube.com/@veb_dizayn_dlya_nachinayushih",
+        "description": "Русскоязычный канал по верстке и JS"
+      }
+    ]
+  }
+]

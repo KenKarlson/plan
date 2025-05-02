@@ -1,0 +1,632 @@
+[
+  {
+    "day": "1",
+    "theme": "Установка Rust и настройка среды",
+    "task": "Установить Rust через rustup, проверить версию, создать первый Hello World",
+    "resources": "<a href='https://www.rust-lang.org/tools/install' target='_blank'>Rust установка</a>",
+    "example": "fn main() {\n    println!(\"Hello, world!\");\n}"
+  },
+  {
+    "day": "2",
+    "theme": "Переменные и mutability",
+    "task": "Изучить let, mut, shadowing",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html' target='_blank'>Variables</a>",
+    "example": "let mut x = 5;\nx = 6;"
+  },
+  {
+    "day": "3",
+    "theme": "Типы данных и инференция типов",
+    "task": "Работать с int, float, bool, char, строками",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch03-02-data-types.html' target='_blank'>Data Types</a>",
+    "example": "let guess: u32 = \"42\".parse().expect(\"Not a number\");"
+  },
+  {
+    "day": "4",
+    "theme": "Константы и неизменяемые переменные",
+    "task": "Разница между const и let, область видимости",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html' target='_blank'>Immutability</a>",
+    "example": "const MAX_POINTS: u32 = 100_000;"
+  },
+  {
+    "day": "5",
+    "theme": "Условия if/else и match",
+    "task": "Использовать условия и выражения в Rust",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch03-05-control-flow.html' target='_blank'>Control Flow</a>",
+    "example": "let number = 3;\nif number < 5 {\n    println!(\"less than five\");\n}"
+  },
+  {
+    "day": "6",
+    "theme": "Циклы: loop, while, for",
+    "task": "Использовать все виды циклов",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch03-05-control-flow.html' target='_blank'>Loops</a>",
+    "example": "for number in (1..4).rev() {\n    println!(\"{}!\", number);\n}"
+  },
+  {
+    "day": "7",
+    "theme": "Структуры данных: кортежи и массивы",
+    "task": "Изучить кортежи и массивы",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch03-02-data-types.html' target='_blank'>Primitive Types</a>",
+    "example": "let a = [1, 2, 3];\nlet t = (500, 6.4, 1);"
+  },
+  {
+    "day": "8",
+    "theme": "Ownership и Borrowing",
+    "task": "Понять систему владения и заимствования",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html' target='_blank'>Ownership</a>",
+    "example": "let s1 = String::from(\"hello\");\nlet len = calculate_length(&s1);"
+  },
+  {
+    "day": "9",
+    "theme": "Structs — пользовательские типы",
+    "task": "Создавать структуры и работать с ними",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch05-00-structs.html' target='_blank'>Structs</a>",
+    "example": "struct User {\n    username: String,\n    active: bool,\n}\nlet user1 = User { username: String::from(\"Alice\"), active: true }"
+  },
+  {
+    "day": "10",
+    "theme": "Enums и match",
+    "task": "Изучить перечисления и паттерн match",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch06-00-enums.html' target='_blank'>Enums</a>",
+    "example": "enum IpAddrKind {\n    V4,\n    V6,\n}\nlet four = IpAddrKind::V4;"
+  },
+  {
+    "day": "11",
+    "theme": "Методы и функции",
+    "task": "Создавать методы для структур",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch05-03-method-syntax.html' target='_blank'>Methods</a>",
+    "example": "impl Rectangle {\n    fn area(&self) -> u32 {\n        self.width * self.height\n    }\n}"
+  },
+  {
+    "day": "12",
+    "theme": "Trait и реализация поведения",
+    "task": "Создавать trait и реализовывать их",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch10-02-traits.html' target='_blank'>Traits</a>",
+    "example": "trait Summary {\n    fn summarize(&self) -> String;\n}\nimpl Summary for NewsArticle { ... }"
+  },
+  {
+    "day": "13",
+    "theme": "Packages, Crates, Modules",
+    "task": "Работать с пакетами, крейтами и модулями",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch07-00-modules.html' target='_blank'>Modules</a>",
+    "example": "mod front_of_house {\n    pub mod hosting {\n        pub fn add_to_waitlist() {}\n    }\n}"
+  },
+  {
+    "day": "14",
+    "theme": "Error Handling",
+    "task": "Обработка ошибок через Result и Option",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch09-00-error-handling.html' target='_blank'>Error handling</a>",
+    "example": "let f = File::open(\"hello.txt\")?;"
+  },
+  {
+    "day": "15",
+    "theme": "Более глубокое понимание lifetimes",
+    "task": "Изучить время жизни ссылок",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html' target='_blank'>Lifetimes</a>",
+    "example": "fn longest<'a>(x: &'a str, y: &'a str) -> &'a str { ... }"
+  },
+  {
+    "day": "16",
+    "theme": "Strings и работа с текстом",
+    "task": "Работать с String, &str, методами строк",
+    "resources": "<a href='https://doc.rust-lang.org/std/string/struct.String.html' target='_blank'>String API</a>",
+    "example": "let mut s = String::new();\ns.push_str(\"text\");"
+  },
+  {
+    "day": "17",
+    "theme": "Vectors и коллекции",
+    "task": "Изучить Vec<T> и работу с ними",
+    "resources": "<a href='https://doc.rust-lang.org/std/vec/struct.Vec.html' target='_blank'>Vec</a>",
+    "example": "let mut v = Vec::new();\nv.push(1);\nv.pop();"
+  },
+  {
+    "day": "18",
+    "theme": "HashMap и HashSet",
+    "task": "Работать с хэш-картами и множествами",
+    "resources": "<a href='https://doc.rust-lang.org/std/collections/struct.HashMap.html' target='_blank'>HashMap</a>",
+    "example": "use std::collections::HashMap;\nlet mut scores = HashMap::new();\nscores.insert(String::from(\"Blue\"), 10);"
+  },
+  {
+    "day": "19",
+    "theme": "Iterators и итерации",
+    "task": "Использовать итераторы для обработки данных",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch13-02-iterators.html' target='_blank'>Iterators</a>",
+    "example": "let v1: Vec<i32> = vec![1, 2, 3];\nlet v2: Vec<_> = v1.iter().map(|x| x + 1).collect();"
+  },
+  {
+    "day": "20",
+    "theme": "Smart Pointers и Box<T>",
+    "task": "Изучить Box<T> и управление памятью",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch15-00-smart-pointers.html' target='_blank'>Smart Pointers</a>",
+    "example": "let b = Box::new(5);\nprintln!(\"b = {}\", *b);"
+  },
+  {
+    "day": "21",
+    "theme": "Работа с файлами",
+    "task": "Читать и записывать файлы в Rust",
+    "resources": "<a href='https://doc.rust-lang.org/std/fs/struct.File.html' target='_blank'>File I/O</a>",
+    "example": "use std::fs::File;\nuse std::io::prelude::*;\nlet mut file = File::open(\"test.txt\").expect(\"Failed to open file\");"
+  },
+  {
+    "day": "22",
+    "theme": "Работа с директориями",
+    "task": "Создавать, удалять, читать директории",
+    "resources": "<a href='https://doc.rust-lang.org/std/fs/f.read_dir.html' target='_blank'>Read Dir</a>",
+    "example": "for entry in fs::read_dir(\".\").unwrap() {\n    let path = entry.unwrap().path();\n    println!(\"{:?}\", path);\n}"
+  },
+  {
+    "day": "23",
+    "theme": "JSON и сериализация/десериализация",
+    "task": "РаЍ이터 с JSON через serde",
+    "resources": "<a href='https://serde.rs/' target='_blank'>Serde</a>",
+    "example": "#[derive(Serialize, Deserialize)]\nstruct User {\n    name: String,\n    age: u8,\n}"
+  },
+  {
+    "day": "24",
+    "theme": "Time и дата",
+    "task": "Работать с временем и датой",
+    "resources": "<a href='https://docs.rs/chrono/latest/chrono/' target='_blank'>Chrono</a>",
+    "example": "use chrono::prelude::*;\nlet dt = Utc::now();\nprintln!(\"Today is {}\", dt.format(\"%Y-%m-%d\"));"
+  },
+  {
+    "day": "25",
+    "theme": "Регулярные выражения",
+    "task": "Использовать регулярные выражения в Rust",
+    "resources": "<a href='https://docs.rs/regex/latest/regex/' target='_blank'>Regex</a>",
+    "example": "let re = Regex::new(r\"\\d+\").unwrap();\nlet cap = re.captures(\"abc123xyz\").unwrap();"
+  },
+  {
+    "day": "26",
+    "theme": "Работа с HTTP клиентом",
+    "task": "Делать GET-запросы и обрабатывать ответы",
+    "resources": "<a href='https://docs.rs/reqwest/latest/reqwest/' target='_blank'>Reqwest</a>",
+    "example": "let body = reqwest::get(\"https://example.com\")\n    .await?\n    .text()\n    .await?;"
+  },
+  {
+    "day": "27",
+    "theme": "HTTP сервер на Actix-web",
+    "task": "Создать простой веб-сервер на Actix",
+    "resources": "<a href='https://actix.rs/' target='_blank'>Actix Web</a>",
+    "example": "async fn index() -> HttpResponse {\n    HttpResponse::Ok().body(\"Hello World!\")\n}\n#[actix_web::main]\nasync fn main() -> std::io::Result<()> {\n    HttpServer::new(|| App::new().route(\"/\", web::get().to(index)))\n        .bind(\"127.0.0.1:8080\")?.run().await\n}"
+  },
+  {
+    "day": "28",
+    "theme": "Middleware и маршрутизация",
+    "task": "Добавлять middleware и маршруты",
+    "resources": "<a href='https://actix.rs/docs/middleware/' target='_blank'>Actix Middleware</a>",
+    "example": "App::new()\n    .wrap(middleware::Logger::default())\n    .service(web::resource(\"/\").route(web::get().to(handler)))"
+  },
+  {
+    "day": "29",
+    "theme": "Работа с базами данных: Diesel ORM",
+    "task": "Подключиться к SQL-базе через Diesel",
+    "resources": "<a href='http://diesel.rs/guides/getting-started' target='_blank'>Diesel ORM</a>",
+    "example": "use diesel::prelude::*;\nlet connection = establish_connection();\nlet users = users.load::<User>(&connection)"
+  },
+  {
+    "day": "30",
+    "theme": "CRUD операции с базой",
+    "task": "Выполнять INSERT, SELECT, UPDATE, DELETE",
+    "resources": "<a href='http://diesel.rs/guides/working-with-database/' target='_blank'>Diesel CRUD</a>",
+    "example": "insert_into(users)\n    .values((name.eq(\"Alice\"), email.eq(\"a@example.com\")))\n    .execute(&conn)?;"
+  },
+  {
+    "day": "31",
+    "theme": "Concurrency и async/await",
+    "task": "Работать с асинхронным кодом",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch13-01-iterators.html' target='_blank'>Async Rust</a>",
+    "example": "async fn fetch_data() -> Result<String, reqwest::Error> {\n    let res = reqwest::get(\"https://api.example.com/data\").await?.text().await?;\n    Ok(res)\n}"
+  },
+  {
+    "day": "32",
+    "theme": "Futures и Tokio Runtime",
+    "task": "Использовать futures и запускать async-задачи",
+    "resources": "<a href='https://tokio.rs/tokio/tutorial' target='_blank'>Tokio</a>",
+    "example": "tokio::spawn(async {\n    println!(\"Running in Tokio runtime\");\n});"
+  },
+  {
+    "day": "33",
+    "theme": "Channels и передача данных между задачами",
+    "task": "Использовать каналы для коммуникации",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html' target='_blank'>MPSC Channels</a>",
+    "example": "let (tx, mut rx) = mpsc::channel(32);\ntx.send(\"message\").await?;\nwhile let Some(msg) = rx.recv().await {\n    println!(\"Received: {}\", msg);\n}"
+  },
+  {
+    "day": "34",
+    "theme": "Mutex и блокировка",
+    "task": "Использовать Arc<Mutex<T>> для конкурентного доступа",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch16-03-shared-state.html' target='_blank'>Shared State</a>",
+    "example": "let counter = Arc::new(Mutex::new(0));\nlet c = Arc::clone(&counter);\nthread::spawn(move || {\n    let mut num = c.lock().unwrap();\n    *num += 1;\n}).join();"
+  },
+  {
+    "day": "35",
+    "theme": "Testing и тестирование кода",
+    "task": "Писать unit- и integration-тесты",
+    "resources": "<a href='https://doc.rust-lang.org/book/ch11-01-writing-tests.html' target='_blank'>Writing Tests</a>",
+    "example": "fn add(a: i32, b: i32) -> i32 { a + b }\n#[cfg(test)]\nmod tests {\n    use super::*;\n    #[test]\n    fn test_add() {\n        assert_eq!(add(2, 2), 4);\n    }\n}"
+  },
+  {
+    "day": "36",
+    "theme": "Benchmarking и производительность",
+    "task": "Проводить бенчмаркинг кода",
+    "resources": "<a href='https://doc.rust-lang.org/unstable-book/library-features/test.html' target='_blank'>Benches</a>",
+    "example": "#[bench]\nfn bench_add(b: &mut Bencher) {\n    b.iter(|| add(2, 2));\n}"
+  },
+  {
+    "day": "37",
+    "theme": "Работа с Serde JSON",
+    "task": "Сериализовать и десериализовать данные в JSON",
+    "resources": "<a href='https://serde.rs/' target='_blank'>Serde</a>",
+    "example": "#[derive(Serialize, Deserialize)]\nstruct User {\n    name: String,\n    age: u8,\n}\nlet json = serde_json::to_string(&user)?;\nlet user: User = serde_json::from_str(&json)?;"
+  },
+  {
+    "day": "38",
+    "theme": "Работа с XML и YAML",
+    "task": "Использовать serde-xml-rs и serde-yaml",
+    "resources": "<a href='https://crates.io/crates/serde-xml-rs' target='_blank'>serde-xml-rs</a>, <a href='https://crates.io/crates/serde_yaml' target='_blank'>serde-yaml</a>",
+    "example": "let yaml = \"name: Alice\\nage: 30\";\nlet user: User = serde_yaml::from_str(yaml).unwrap();"
+  },
+  {
+    "day": "39",
+    "theme": "Работа с CLI и clap",
+    "task": "Создавать CLI-приложения с флагами и аргументами",
+    "resources": "<a href='https://clap.rs/' target='_blank'>Clap</a>",
+    "example": "let matches = Command::new(\"myapp\")\n    .arg(Arg::new(\"input\").short('i').long(\"input\"))\n    .get_matches();"
+  },
+  {
+    "day": "40",
+    "theme": "Работа с Tokio TCP/UDP",
+    "task": "Создать TCP и UDP серверы и клиенты",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/net/tcp/struct.TcpListener.html' target='_blank'>TCP in Tokio</a>",
+    "example": "let listener = TcpListener::bind(\"127.0.0.1:8080\").await?;\nloop {\n    let (stream, _) = listener.accept().await?;\n    tokio::spawn(async move { handle_client(stream).await });\n}"
+  },
+  {
+    "day": "41",
+    "theme": "Работа с Async Traits и Futures",
+    "task": "Изучить async/await в контексте traits",
+    "resources": "<a href='https://rust-lang.github.io/async-book/03_async_await.html' target='_blank'>Async Book</a>",
+    "example": "async fn get_data() -> Result<String, reqwest::Error> {\n    let res = reqwest::get(\"https://example.com\").await?.text().await?;\n    Ok(res)\n}"
+  },
+  {
+    "day": "42",
+    "theme": "Работа с Tokio JoinHandle",
+    "task": "Запускать задачи параллельно и ожидать результат",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/task/struct.JoinHandle.html' target='_blank'>JoinHandle</a>",
+    "example": "let handle = tokio::spawn(async {\n    // some async code\n});\nhandle.await?"
+  },
+  {
+    "day": "43",
+    "theme": "Работа с Tokio Mutex",
+    "task": "Использовать мьютексы в async-среде",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/sync/struct.Mutex.html' target='_blank'>Tokio Mutex</a>",
+    "example": "use tokio::sync::Mutex;\nlet data = Arc::new(Mutex::new(0));"
+  },
+  {
+    "day": "44",
+    "theme": "Работа с Tokio RwLock",
+    "task": "Использовать read/write locks в многопоточной среде",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/sync/struct.RwLock.html' target='_blank'>RwLock</a>",
+    "example": "let lock = Arc::new(RwLock::new(5));\n{\n    let n = lock.read().await;\n    println!(\"n = {}\", *n);\n}"
+  },
+  {
+    "day": "45",
+    "theme": "Работа с Tokio Channel",
+    "task": "Обмениваться данными между задачами",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/sync/mpsc' target='_blank'>Channel</a>",
+    "example": "let (tx, mut rx) = mpsc::channel(32);\ntx.send(\"message\").await?;\nassert_eq!(rx.recv().await, Some(\"message\"));"
+  },
+  {
+    "day": "46",
+    "theme": "Работа с Warp Framework",
+    "task": "Создать HTTP-сервер на Warp",
+    "resources": "<a href='https://github.com/seanmonstar/warp' target='_blank'>Warp</a>",
+    "example": "let hello = warp::path(\"hello\")\n    .map(|| \"Hello, World!\");\nwarp::serve(hello).run(([127, 0, 0, 1], 3030)).await;"
+  },
+  {
+    "day": "47",
+    "theme": "Работа с Axum Framework",
+    "task": "Создать веб-приложение на Axum",
+    "resources": "<a href='https://github.com/tokio-rs/axum' target='_blank'>Axum</a>",
+    "example": "async fn hello(Query(params): Query<HashMap<String, String>>) -> String {\n    format!(\"Hello, {:?}!\", params)"
+  },
+  {
+    "day": "48",
+    "theme": "Работа с Hyper HTTP",
+    "task": "Создать сервер и клиент на Hyper",
+    "resources": "<a href='https://hyper.rs/guides/server/hello-world/' target='_blank'>Hyper</a>",
+    "example": "async fn serve_req(_req: Request<Body>) -> Result<Response<Body>, Infallible> {\n    Ok(Response::new(Body::from(\"Hello World\")))\n}"
+  },
+  {
+    "day": "49",
+    "theme": "Работа с Tonic gRPC",
+    "task": "Создать gRPC-сервис на Rust",
+    "resources": "<a href='https://github.com/hyperium/tonic' target='_blank'>Tonic</a>",
+    "example": "pub async fn say_hello(&self, request: Request<HelloRequest>) -> Result<Response<HelloReply>, Status> {\n    Ok(Response::new(HelloReply { message: \"Hello\".into() }))\n}"
+  },
+  {
+    "day": "50",
+    "theme": "Работа с Protobuf",
+    "task": "Генерировать и использовать Protobuf",
+    "resources": "<a href='https://github.com/pingcap/protobuf' target='_blank'>Protobuf в Rust</a>",
+    "example": "message Person {\n    required string name = 1;\n    required int32 id = 2;\n}"
+  },
+  {
+    "day": "51",
+    "theme": "Работа с prost",
+    "task": "Использовать prost вместо protobuf",
+    "resources": "<a href='https://github.com/danburkert/prost' target='_blank'>Prost</a>",
+    "example": "prost::Message::encode(&msg, &mut buf)?;"
+  },
+  {
+    "day": "52",
+    "theme": "Работа с Diesel: migrations",
+    "task": "Создавать миграции и работать с БД",
+    "resources": "<a href='http://diesel.rs/guides/getting-started' target='_blank'>Migrations</a>",
+    "example": "diesel setup\n    .table(users)\n    .run()"
+  },
+  {
+    "day": "53",
+    "theme": "Работа с Diesel: модели",
+    "task": "Создавать модели и связывать с таблицами",
+    "resources": "<a href='http://diesel.rs/guides/first-app/' target='_blank'>Models</a>",
+    "example": "use diesel::prelude::*;\n#[derive(Queryable)]\nstruct User {\n    id: i32,\n    name: String,\n}"
+  },
+  {
+    "day": "54",
+    "theme": "Работа с Diesel: запросы",
+    "task": "Писать SELECT, WHERE, JOIN",
+    "resources": "<a href='http://diesel.rs/guides/getting-started' target='_blank'>Queries</a>",
+    "example": "users.filter(name.like(\"%Bob%\"))"
+  },
+  {
+    "day": "55",
+    "theme": "Работа с Diesel: insert",
+    "task": "Выполнять INSERT-запросы",
+    "resources": "<a href='http://diesel.rs/guides/getting-started' target='_blank'>Insert</a>",
+    "example": "diesel::insert_into(users)\n    .values(&new_user)\n    .execute(conn)?;"
+  },
+  {
+    "day": "56",
+    "theme": "Работа с Diesel: update",
+    "task": "Обновлять записи в БД",
+    "resources": "<a href='http://diesel.rs/guides/getting-started' target='_blank'>Update</a>",
+    "example": "diesel::update(users.find(id))\n    .set(name.eq(\"New Name\"))\n    .execute(conn)?;"
+  },
+  {
+    "day": "57",
+    "theme": "Работа с Diesel: delete",
+    "task": "Удалять записи из базы",
+    "resources": "<a href='http://diesel.rs/guides/getting-started' target='_blank'>Delete</a>",
+    "example": "diesel::delete(users.find(id))\n    .execute(conn)?;"
+  },
+  {
+    "day": "58",
+    "theme": "Работа с Diesel: join",
+    "task": "Выполнять JOIN-запросы",
+    "resources": "<a href='http://diesel.rs/guides/associations/' target='_blank'>JOIN</a>",
+    "example": "let query = posts.inner_join(users::table).select((posts::all_columns, users::name));"
+  },
+  {
+    "day": "59",
+    "theme": "Работа с Diesel: preload",
+    "task": "Загружать связанные данные",
+    "resources": "<a href='http://diesel.rs/guides/relationships/' target='_blank'>Preload</a>",
+    "example": "let post_with_author = Post::with_related(Author::belonging_to(&posts))"
+  },
+  {
+    "day": "60",
+    "theme": "Работа с Diesel: transactions",
+    "task": "Использовать транзакции",
+    "resources": "<a href='http://diesel.rs/guides/advanced-debugging/' target='_blank'>Transactions</a>",
+    "example": "conn.transaction::<_, diesel::result::Error, _>(|| {\n    diesel::insert_into(...).execute(...)?;\n    Ok(())\n})"
+  },
+  {
+    "day": "61",
+    "theme": "Работа с Tokio: TCP сервер",
+    "task": "Создать TCP-сервер",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/net/tcp/struct.TcpListener.html' target='_blank'>TCP Server</a>",
+    "example": "async fn run_server() -> Result<(), Box<dyn Error>> {\n    let listener = TcpListener::bind(\"127.0.0.1:8080\").await?;"
+  },
+  {
+    "day": "62",
+    "theme": "Работа с Tokio: TCP клиент",
+    "task": "Создать TCP-клиент",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/net/tcp/struct.TcpStream.html' target='_blank'>TCP Client</a>",
+    "example": "let stream = TcpStream::connect(\"127.0.0.1:8080\").await?;"
+  },
+  {
+    "day": "63",
+    "theme": "Работа с Tokio: UDP",
+    "task": "Создать UDP сервер и клиент",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/net/struct.UdpSocket.html' target='_blank'>UDP</a>",
+    "example": "let socket = UdpSocket::bind(\"127.0.0.1:8080\").await?;\nlet (size, src) = socket.recv_from(&mut buffer).await?;"
+  },
+  {
+    "day": "64",
+    "theme": "Работа с Tokio: Timers",
+    "task": "Использовать таймеры и задержки",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/time/fn.sleep.html' target='_blank'>Timers</a>",
+    "example": "tokio::time::sleep(Duration::from_secs(1)).await;"
+  },
+  {
+    "day": "65",
+    "theme": "Работа с Tokio: Select",
+    "task": "Ожидать выполнения нескольких задач",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/macro.select.html' target='_blank'>Select</a>",
+    "example": "tokio::select! {\n    _ = sleep(Duration::from_secs(1)) => {},\n    result = do_something() => { println!(\"Done: {:?}\", result); },\n}"
+  },
+  {
+    "day": "66",
+    "theme": "Работа с Tokio: Join",
+    "task": "Запускать несколько задач и ждать их завершения",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/join!.html' target='_blank'>Join!</a>",
+    "example": "let (res1, res2) = join!(do_work(), do_other()).unwrap();"
+  },
+  {
+    "day": "67",
+    "theme": "Работа с Tokio: Spawn и Tasks",
+    "task": "Создавать и управлять задачами",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/task/fn.spawn.html' target='_blank'>Tasks</a>",
+    "example": "tokio::spawn(async {\n    println!(\"Task running\");\n});"
+  },
+  {
+    "day": "68",
+    "theme": "Работа с Tokio: Shared state",
+    "task": "Общие данные между задачами",
+    "resources": "<a href='https://tokio.rs/tokio/tutorial/shared-state' target='_blank'>Shared State</a>",
+    "example": "let state = Arc::new(Mutex::new(Counter { value: 0 }));"
+  },
+  {
+    "day": "69",
+    "theme": "Работа с Tokio: Broadcast",
+    "task": "Использовать broadcast для отправки сообщений нескольким слушателям",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/sync/broadcast' target='_blank'>Broadcast</a>",
+    "example": "let (tx, mut rx1) = broadcast::channel(16);\ntx.send(\"broadcast message\").unwrap();"
+  },
+  {
+    "day": "70",
+    "theme": "Работа с Tokio: Oneshot channel",
+    "task": "Использовать одноразовые каналы",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/sync/oneshot' target='_blank'>Oneshot</a>",
+    "example": "let (tx, rx) = oneshot::channel();\ntx.send(\"Hi\").unwrap();\nlet msg = rx.await.unwrap();"
+  },
+  {
+    "day": "71",
+    "theme": "Работа с Tokio: MPSC channel",
+    "task": "Использовать multi-producer single-consumer каналы",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/sync/mpsc' target='_blank'>MPSC</a>",
+    "example": "let (tx, mut rx) = mpsc::channel(32);\ntx.send(\"message\").await?;\nwhile let Some(msg) = rx.recv().await {\n    println!(\"Got: {}\", msg);\n}"
+  },
+  {
+    "day": "72",
+    "theme": "Работа с Tokio: Fused и select!",
+    "task": "Использовать fused streams и макрос select! для работы с несколькими задачами",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/macro.select.html' target='_blank'>select! in Tokio</a>",
+    "example": "tokio::select! {\n    Some(msg) = rx.recv() => println!(\"Got message: {}\", msg),\n    _ = interval.tick() => println!(\"Tick\"),\n}"
+  },
+  {
+    "day": "73",
+    "theme": "Работа с Tokio: Stream и Sink",
+    "task": "Изучить работу с потоками данных и отправкой сообщений",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/io/trait.AsyncReadExt.html' target='_blank'>Streams and Sinks</a>",
+    "example": "use tokio::io::{AsyncBufReadExt, BufReader};\nlet mut lines = BufReader::new(stream).lines();"
+  },
+  {
+    "day": "74",
+    "theme": "Работа с Tokio: Timers и интервалы",
+    "task": "Создавать периодические задачи через Interval",
+    "resources": "<a href='https://docs.rs/tokio/latest/tokio/time/struct.Interval.html' target='_blank'>Interval</a>",
+    "example": "let mut interval = tokio::time::interval(Duration::from_secs(1));\nloop {\n    interval.tick().await;\n    println!(\"Tick every second\");\n}"
+  },
+  {
+    "day": "75",
+    "theme": "Работа с Actix-web: маршруты и обработчики",
+    "task": "Создать сервер на Actix-web с маршрутами и обработчиками",
+    "resources": "<a href='https://actix.rs/docs/' target='_blank'>Actix Web Docs</a>",
+    "example": "async fn index(info: web::Path<(String, u32)>) -> String {\n    format!(\"Name: {}, age: {}\", info.0, info.1)\n}\nweb::resource(\"/{name}/{id}/index.html\")\n    .route(web::get().to(index))"
+  },
+  {
+    "day": "76",
+    "theme": "Работа с Actix-web: middleware",
+    "task": "Добавлять middleware к HTTP-приложению",
+    "resources": "<a href='https://actix.rs/docs/middleware/' target='_blank'>Middleware</a>",
+    "example": "App::new()\n    .wrap(middleware::Logger::default())\n    .service(index)"
+  },
+  {
+    "day": "77",
+    "theme": "Работа с Actix-web: JSON и формы",
+    "task": "Обрабатывать JSON и форму-данные в запросах",
+    "resources": "<a href='https://actix.rs/docs/extractors/' target='_blank'>Extractors</a>",
+    "example": "async fn submit(form: web::Form<FormData>) -> HttpResponse {\n    HttpResponse::Ok().body(format!(\"Name: {}\", form.name))\n}"
+  },
+  {
+    "day": "78",
+    "theme": "Работа с Actix-web: state и shared data",
+    "task": "Передавать общие данные между обработчиками",
+    "resources": "<a href='https://actix.rs/docs/state/' target='_blank'>Shared State</a>",
+    "example": "struct AppState {\n    app_name: String,\n}\nasync fn index(data: web::Data<AppState>) -> String {\n    format!(\"App name: {}\", data.app_name)\n}"
+  },
+  {
+    "day": "79",
+    "theme": "Работа с Actix-web: WebSocket",
+    "task": "Создать WebSocket сервер",
+    "resources": "<a href='https://github.com/actix/examples/tree/master/websocket' target='_blank'>WebSocket</a>",
+    "example": "fn ws_index(r: HttpRequest, stream: web::Payload) -> Result<HttpResponse> {\n    ws::start(r, stream, MyWebSocketHandler)"
+  },
+  {
+    "day": "80",
+    "theme": "Работа с Actix-web: тестирование",
+    "task": "Писать тесты для HTTP-обработчиков",
+    "resources": "<a href='https://actix.rs/docs/testing/' target='_blank'>Testing</a>",
+    "example": "let req = test::TestRequest::with_header(\"content-type\", \"application/json\").to_http_request();"
+  },
+  {
+    "day": "81",
+    "theme": "Работа с Serde: Serialize / Deserialize",
+    "task": "Изучить сериализацию и десериализацию через serde",
+    "resources": "<a href='https://serde.rs/derive.html' target='_blank'>Serde Derive</a>",
+    "example": "#[derive(Serialize, Deserialize)]\nstruct User {\n    name: String,\n    age: u8,\n}"
+  },
+  {
+    "day": "82",
+    "theme": "Работа с Serde: custom (пользовательская сериализация)",
+    "task": "Создавать собственные реализации Serialize и Deserialize",
+    "resources": "<a href='https://serde.rs/custom-serialization.html' target='_blank'>Custom Serialization</a>",
+    "example": "impl Serialize for CustomType { ... }\nimpl<'de> Deserialize<'de> for CustomType { ... }"
+  },
+  {
+    "day": "83",
+    "theme": "Работа с Tonic gRPC: клиент",
+    "task": "Создать gRPC-клиент на Rust",
+    "resources": "<a href='https://github.com/hyperium/tonic' target='_blank'>Tonic</a>",
+    "example": "let mut client = HelloClient::connect(\"http://[::1]:50051\").await?;\nlet request = tonic::Request::new(HelloRequest { name: \"Alice\" });"
+  },
+  {
+    "day": "84",
+    "theme": "Работа с Tonic gRPC: streaming",
+    "task": "Работать с потоковыми запросами и ответами",
+    "resources": "<a href='https://github.com/hyperium/tonic/blob/master/examples/src/routeguide/server.rs' target='_blank'>Streaming</a>",
+    "example": "pub async fn route_chat(\n    request: Request<Streaming<Location>>,\n    response: Response<Streaming<RouteNote>>,"
+  },
+  {
+    "day": "85",
+    "theme": "Мини-проект: CLI приложение на Rust",
+    "task": "Создать консольное приложение с флагами и аргументами",
+    "resources": "-",
+    "example": "-"
+  },
+  {
+    "day": "86",
+    "theme": "Мини-проект: TCP чат на Tokio",
+    "task": "Создать многопользовательский TCP-чат",
+    "resources": "-",
+    "example": "-"
+  },
+  {
+    "day": "87",
+    "theme": "Мини-проект: WebSocket чат на Actix",
+    "task": "Создать простой WebSocket-чат",
+    "resources": "-",
+    "example": "Этот день — практический. Он направлен на создание простого WebSocket-чата , используя фреймворк Actix-web + WebSocket API . "
+  },
+  {
+    "day": "88",
+    "theme": "Мини-проект: REST API сервер на Axum",
+    "task": "Создать полноценный REST API сервер",
+    "resources": "-",
+    "example": "-"
+  },
+  {
+    "day": "89",
+    "theme": "Мини-проект: CRUD приложение с базой данных",
+    "task": "Создать приложение с добавлением, чтением, обновлением и удалением записей",
+    "resources": "-",
+    "example": "-"
+  },
+  {
+    "day": "90",
+    "theme": "Финальный проект: Fullstack приложение",
+    "task": "Создать фронтенд + бэкенд на Rust, соединить с БД",
+    "resources": "-",
+    "example": "-"
+  }
+]
