@@ -4,11 +4,20 @@
     <meta charset="UTF-8" />
     <title>📅 Идеальный трекер изучения</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="pomodoro.js" defer></script>
     <script src="main.js" defer></script>
   </head>
   <body>
     <h1>📅 Идеальный трекер изучения языков за 90 дней</h1>
     <h3>Для Шурика</h3>
+    <hr />
+    <div id="pomodoro">
+      <h2>⏰ Таймер Помодоро</h2>
+      <div id="timer">25:00</div>
+      <button onclick="startPomodoro()">Старт</button>
+      <button onclick="resetPomodoro()">Сброс</button>
+    </div>
+    <hr />
 
     <div id="progress-bar">
       <h2>📊 Твой прогресс</h2>
