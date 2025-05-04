@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>📅 Идеальный трекер изучения</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
-    <h1>📅 Идиальный трекер изучения языков за 90 дней</h1>
+    <h1>📅 Идеальный трекер изучения языков за 90 дней</h1>
     <h3>Для Шурика</h3>
 
     <div id="progress-bar">
@@ -14,9 +15,7 @@
       <p>
         <strong>Пройдено:</strong> <span id="completed-count">0</span> / 90 дней
       </p>
-      <div class="progress-track">
-        <div id="progress-fill"></div>
-      </div>
+      <div class="progress-track"><div id="progress-fill"></div></div>
       <p><strong>Завершено:</strong> <span id="progress-percent">0%</span></p>
     </div>
 
@@ -39,51 +38,5 @@
       </thead>
       <tbody></tbody>
     </table>
-
-    <!-- Floating Menu -->
-    <div id="floating-menu">
-      <div id="floating-button">🧭</div>
-      <div id="floating-panel">
-        <h3>Моё обучение</h3>
-        <!--Style theme-->
-        <div style="margin-top: 10px">
-          <button id="toggle-theme" style="font-size: 0.8em">
-            🌙 Тёмная тема
-          </button>
-        </div>
-        <!-- Pomodoro Mini Timer -->
-        <div style="margin-bottom: 10px">
-          <div id="pomodoro-mini">
-            <span
-              id="pomodoro-mode-mini"
-              style="font-size: 0.9em; font-weight: bold"
-              >Работа</span
-            >
-            |
-            <span id="pomodoro-timer-mini" style="font-family: monospace"
-              >25:00</span
-            >
-          </div>
-          <div>
-            <button id="start-pomodoro-mini" style="font-size: 0.8em">
-              Старт
-            </button>
-            <button id="pause-pomodoro-mini" style="font-size: 0.8em">
-              Пауза
-            </button>
-            <button id="reset-pomodoro-mini" style="font-size: 0.8em">
-              Сброс
-            </button>
-          </div>
-        </div>
-
-        <!-- Navigation -->
-        <ul style="list-style: none; padding-left: 0">
-          <li><a href="resources.html">📘 Ресурсы</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
