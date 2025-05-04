@@ -6,18 +6,25 @@
     <link rel="stylesheet" href="style.css" />
     <script src="pomodoro.js" defer></script>
     <script src="main.js" defer></script>
+    <script src="lesson.js" defer></script>
   </head>
   <body>
     <h1>📅 Идеальный трекер изучения языков за 90 дней</h1>
     <h3>Для Шурика</h3>
-    <hr />
     <div id="pomodoro">
       <h2>⏰ Таймер Помодоро</h2>
       <div id="timer">25:00</div>
-      <button onclick="startPomodoro()">Старт</button>
-      <button onclick="resetPomodoro()">Сброс</button>
+      <p>Сегодня Pomodоро: <span id="pomodoro-count">0</span></p>
+      <button id="start-btn">Старт</button>
+      <button class="pause-btn" disabled>Пауза</button>
+      <button id="reset-btn">Сброс</button>
+      <p id="status">Статус: Ожидание</p>
     </div>
-    <hr />
+
+    <audio
+      id="end-sound"
+      src="https://www.soundjay.com/buttons/sounds/beep-07.mp3"
+    ></audio>
 
     <div id="progress-bar">
       <h2>📊 Твой прогресс</h2>
@@ -47,5 +54,7 @@
       </thead>
       <tbody></tbody>
     </table>
+
+    <div class="lessons-list" id="lessons"></div>
   </body>
 </html>

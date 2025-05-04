@@ -1,4 +1,6 @@
 // === Переменные ===
+const lessonsContainer = document.getElementById("lessons");
+const lessons = [];
 const plans = {
   js: [
     {

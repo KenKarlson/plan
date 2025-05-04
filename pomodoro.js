@@ -1,8 +1,25 @@
-let timerDisplay = document.getElementById("timer");
-let timerDuration = 25 * 60; // 25 минут
-let timer = timerDuration;
-let interval = null;
+const timerDisplay = document.getElementById("timer");
+const statusDisplay = document.getElementById("status");
+const countDisplay = document.getElementById("pomodoro-count");
+const pauseBtn = document.querySelector(".pause-btn");
+const endSound = document.getElementById("end-sound");
+const startBtn = document.getElementById("start-btn");
+const resetBtn = document.getElementById("reset-btn");
 
+let workDuration = 25 * 60; // 25 минут
+let breakDuration = 5 * 60; // 5 минут
+let timer = workDuration;
+let interval = null;
+let isBreak = false;
+let pomodoroCount = parseInt(localStorage.getItem("pomodoroCount")) || 0;
+let isPaused = false;
+
+// Обновление счётчика
+function updateCountDisplay() {
+  countDisplay.textContent = pomodoroCount;
+}
+
+// Обновление отображения времени
 function updateDisplay() {
   let minutes = Math.floor(timer / 60);
   let seconds = timer % 60;
@@ -11,8 +28,19 @@ function updateDisplay() {
   ).padStart(2, "0")}`;
 }
 
+// Воспроизведение звука
+function playEndSound() {
+  endSound.currentTime = 0;
+  endSound.play();
+}
+
+// Начать Pomodoro
 function startPomodoro() {
-  if (interval) clearInterval(interval);
+  if (interval || isPaused) return;
+
+  if (!isBreak && timer === workDuration && pomodoroCount === 0) {
+    statusDisplay.textContent = "Статус: Работа";
+  }
 
   interval = setInterval(() => {
     if (timer > 0) {
@@ -20,28 +48,66 @@ function startPomodoro() {
       updateDisplay();
     } else {
       clearInterval(interval);
-      alert("Время Pomodoro закончилось! Отдохни 5 мин.");
-      timer = 5 * 60; // Переключаемся на отдых
-      interval = setInterval(() => {
-        if (timer > 0) {
-          timer--;
-          updateDisplay();
-        } else {
-          clearInterval(interval);
-          alert("Время отдыха закончилось!");
-          timer = timerDuration;
-          updateDisplay();
-        }
-      }, 1000);
+      playEndSound();
+
+      if (!isBreak) {
+        // Работа закончена → отдых
+        isBreak = true;
+        statusDisplay.textContent = "Статус: Отдых";
+        timer = breakDuration;
+        interval = null;
+        startPomodoro(); // Автоматически запускаем отдых
+      } else {
+        // Отдых закончен → работа + новый Pomodoro
+        isBreak = false;
+        pomodoroCount++;
+        localStorage.setItem("pomodoroCount", pomodoroCount);
+        updateCountDisplay();
+
+        statusDisplay.textContent = "Статус: Работа";
+        timer = workDuration;
+        interval = null;
+        startPomodoro(); // Автоматически запускаем работу
+      }
     }
   }, 1000);
+
+  pauseBtn.disabled = false;
+  pauseBtn.textContent = "Пауза";
 }
 
+// Пауза
+function pausePomodoro() {
+  if (interval) {
+    clearInterval(interval);
+    interval = null;
+    isPaused = true;
+    pauseBtn.textContent = "Продолжить";
+  } else {
+    isPaused = false;
+    pauseBtn.textContent = "Пауза";
+    startPomodoro();
+  }
+}
+
+// Сброс
 function resetPomodoro() {
   if (interval) clearInterval(interval);
-  timer = timerDuration;
+  interval = null;
+  isBreak = false;
+  isPaused = false;
+  timer = workDuration;
   updateDisplay();
+  statusDisplay.textContent = "Статус: Ожидание";
+  pauseBtn.disabled = true;
+  pauseBtn.textContent = "Пауза";
 }
+
+// Добавляем слушатели событий
+startBtn.addEventListener("click", startPomodoro);
+pauseBtn.addEventListener("click", pausePomodoro);
+resetBtn.addEventListener("click", resetPomodoro);
 
 // Инициализация при загрузке
 updateDisplay();
+updateCountDisplay();
