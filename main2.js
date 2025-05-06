@@ -1,3 +1,4 @@
+// === Данные из org.txt ===
 // === Данные по курсам ===
 const plans = {
   htmlcss: {
@@ -557,7 +558,7 @@ let currentModule = "htmlcss";
 let savedProgress = {};
 const progressKeyPrefix = "progress-";
 
-// === DOM элементы ===
+// DOM-элементы
 const moduleButtons = document.querySelectorAll("#module-buttons button");
 const contentContainer = document.getElementById("content");
 const progressBarFill = document.getElementById("progress-fill");
@@ -578,109 +579,14 @@ function saveProgress() {
 }
 
 function updateProgress(total, completed) {
-  const percent = Math.round((completed / total) * 100);
+  const percent = Math.round(completed / total ? (completed / total) * 100 : 0);
   progressBarFill.style.width = `${percent}%`;
   completedCountEl.textContent = completed;
   totalCountEl.textContent = total;
   progressPercentEl.textContent = `${percent}%`;
 }
-//Render
-// function renderModule(moduleKey) {
-//   currentModule = moduleKey;
-//   loadProgress();
 
-//   const plan = plans[moduleKey];
-//   if (!plan) return;
-
-//   let allQuestions = [];
-//   let totalQuestions = 0;
-
-//   contentContainer.innerHTML = "";
-
-//   plan.weeks.forEach((week) => {
-//     const weekEl = document.createElement("div");
-//     weekEl.className = "week";
-//     weekEl.innerHTML = `<h3>📅 Неделя ${week.number}: ${week.title}</h3>`;
-//     if (week.description) {
-//       const desc = document.createElement("p");
-//       desc.className = "description";
-//       desc.textContent = week.description;
-//       weekEl.appendChild(desc);
-//     }
-
-//     week.topics.forEach((topic) => {
-//       const topicEl = document.createElement("div");
-//       topicEl.className = "topic";
-//       topicEl.innerHTML = `<h4>📘 Тема: ${topic.theme}</h4>`;
-//       if (topic.task) {
-//         const desc = document.createElement("p");
-//         desc.className = "description";
-//         desc.textContent = topic.task;
-//         topicEl.appendChild(desc);
-//       }
-
-//       const questionsList = document.createElement("ul");
-//       questionsList.className = "questions";
-
-//       topic.questions.forEach((q) => {
-//         const li = document.createElement("li");
-//         const label = document.createElement("span");
-//         label.textContent = q.q;
-
-//         // Чекбокс
-//         const checkboxWrapper = document.createElement("div");
-//         checkboxWrapper.className = "checkbox-wrapper";
-//         checkboxWrapper.innerHTML = `
-//           <label>
-//             <input type="checkbox" data-day="${topic.day}" ${
-//           savedProgress[topic.day] ? "checked" : ""
-//         } />
-//             Выполнено
-//           </label>
-//         `;
-
-//         // Подробности
-//         const details = document.createElement("div");
-//         details.className = "question-details";
-//         details.innerHTML = `<p>${q.desc}</p><code>${q.example}</code>`;
-
-//         li.appendChild(label);
-//         li.appendChild(checkboxWrapper);
-//         li.appendChild(details);
-
-//         li.addEventListener("click", (e) => {
-//           if (e.target.type !== "checkbox") {
-//             details.classList.toggle("show");
-//           }
-//         });
-
-//         questionsList.appendChild(li);
-//         allQuestions.push({ el: li, day: topic.day });
-//       });
-
-//       topicEl.appendChild(questionsList);
-//       weekEl.appendChild(topicEl);
-//       totalQuestions++;
-//     });
-
-//     contentContainer.appendChild(weekEl);
-//   });
-
-//   // Обработчики событий
-//   contentContainer
-//     .querySelectorAll("input[type='checkbox']")
-//     .forEach((input) => {
-//       input.addEventListener("change", (e) => {
-//         const day = e.target.closest("li").querySelector("[data-day]")
-//           .dataset.day;
-//         savedProgress[day] = e.target.checked;
-//         saveProgress();
-//         updateStats(allQuestions);
-//       });
-//     });
-
-//   updateStats(allQuestions);
-// }
+// === Рендеринг текущего модуля ===
 function renderModule(moduleKey) {
   currentModule = moduleKey;
   loadProgress();
@@ -692,34 +598,40 @@ function renderModule(moduleKey) {
 
   contentContainer.innerHTML = "";
 
-  plan.weeks.forEach((week) => {
+  plan.weeks.forEach((week, weekIndex) => {
     const weekEl = document.createElement("div");
     weekEl.className = "week";
 
-    // Заголовок недели (без дублирования)
+    // Заголовок недели
     const weekTitle = document.createElement("h3");
     weekTitle.textContent = `📅 Неделя ${week.number}: ${week.title}`;
     weekEl.appendChild(weekTitle);
 
-    // Описание недели (по клику)
+    // Описание недели
     if (week.description) {
       const desc = document.createElement("p");
       desc.className = "description";
       desc.textContent = week.description;
       weekEl.appendChild(desc);
-
-      weekEl.addEventListener("click", () => {
-        desc.classList.toggle("show");
-      });
     }
+
+    // При клике на неделю — показываем описание
+    weekEl.addEventListener("click", () => {
+      const desc = weekEl.querySelector(".description");
+      if (desc) desc.classList.toggle("show");
+    });
+
+    // Контейнер для тем
+    const topicsContainer = document.createElement("div");
+    topicsContainer.className = "topics-container";
 
     // Темы
     week.topics.forEach((topic) => {
       const topicEl = document.createElement("div");
       topicEl.className = "topic";
 
+      // Заголовок темы
       const topicHeader = document.createElement("h4");
-      topicHeader.className = "topic-header";
       topicHeader.textContent = `📘 Тема: ${topic.theme}`;
       topicEl.appendChild(topicHeader);
 
@@ -729,23 +641,27 @@ function renderModule(moduleKey) {
         taskDesc.className = "description";
         taskDesc.textContent = topic.task;
         topicEl.appendChild(taskDesc);
-
-        topicEl.addEventListener("click", () => {
-          taskDesc.classList.toggle("show");
-        });
       }
 
-      // Вопросы
+      // При клике на тему — показываем описание
+      topicEl.addEventListener("click", () => {
+        const taskDesc = topicEl.querySelector(".description");
+        if (taskDesc) taskDesc.classList.toggle("show");
+      });
+
+      // Список вопросов
       const questionsList = document.createElement("ul");
       questionsList.className = "questions";
 
+      // Вопросы
       topic.questions.forEach((q) => {
         const li = document.createElement("li");
 
+        // Текст вопроса
         const label = document.createElement("span");
         label.textContent = q.q;
 
-        // Чекбокс
+        // Чекбокс выполнения
         const checkboxWrapper = document.createElement("div");
         checkboxWrapper.className = "checkbox-wrapper";
         checkboxWrapper.innerHTML = `
@@ -757,58 +673,74 @@ function renderModule(moduleKey) {
           </label>
         `;
 
-        // Подробности
+        // Подробности вопроса
         const details = document.createElement("div");
         details.className = "question-details";
         details.innerHTML = `<p>${q.desc}</p><code>${q.example}</code>`;
 
-        li.appendChild(label);
-        li.appendChild(checkboxWrapper);
-        li.appendChild(details);
-
-        // Клик по вопросу → открываем описание
+        // При клике на вопрос — показываем/скрываем подробности
         li.addEventListener("click", (e) => {
           if (e.target.type !== "checkbox") {
             details.classList.toggle("show");
           }
         });
 
+        // Сборка элемента вопроса
+        li.appendChild(label);
+        li.appendChild(checkboxWrapper);
+        li.appendChild(details);
         questionsList.appendChild(li);
         allQuestions.push({ el: li, day: topic.day });
       });
 
       topicEl.appendChild(questionsList);
-      weekEl.appendChild(topicEl);
+      topicsContainer.appendChild(topicEl);
     });
 
+    // Добавляем темы в неделю
+    weekEl.appendChild(topicsContainer);
     contentContainer.appendChild(weekEl);
-  });
 
-  // Обработчики событий для чекбоксов
-  contentContainer
-    .querySelectorAll("input[type='checkbox']")
-    .forEach((input) => {
-      input.addEventListener("change", (e) => {
-        const day = e.target.closest("li").querySelector("[data-day]")
-          .dataset.day;
-        savedProgress[day] = e.target.checked;
-        saveProgress();
-        updateStats(allQuestions);
+    // === Проверка: вся ли неделя пройдена? ===
+    function checkWeekCompleted() {
+      const totalInWeek = week.topics.reduce(
+        (sum, t) => sum + t.questions.length,
+        0
+      );
+      const completedInWeek = week.topics.reduce(
+        (sum, t) =>
+          sum + t.questions.filter((q) => savedProgress[t.day]).length,
+        0
+      );
+
+      if (totalInWeek > 0 && completedInWeek === totalInWeek) {
+        weekEl.style.display = "none"; // Скрываем неделю
+      } else {
+        weekEl.style.display = ""; // Показываем обратно
+      }
+    }
+
+    // === Обработчики событий для чекбоксов ===
+    contentContainer
+      .querySelectorAll("input[type='checkbox']")
+      .forEach((input) => {
+        input.addEventListener("change", (e) => {
+          const day = e.target.closest("li").querySelector("[data-day]")
+            .dataset.day;
+          savedProgress[day] = e.target.checked;
+          saveProgress();
+          updateStats(allQuestions);
+          checkWeekCompleted(); // Проверяем завершение недели
+        });
       });
-    });
+  });
 
   updateStats(allQuestions);
 }
 
-function updateStats(allQuestions) {
-  const total = allQuestions.length;
-  const completed = allQuestions.filter((q) => savedProgress[q.day]).length;
-  updateProgress(total, completed);
-}
-
 // === Инициализация ===
 window.addEventListener("DOMContentLoaded", () => {
-  // Обработчики кнопок
+  // Переключение между курсами
   moduleButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       moduleButtons.forEach((b) => b.classList.remove("active"));

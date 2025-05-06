@@ -2,59 +2,45 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>📅 Идеальный трекер изучения</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📅 Трекер изучения Frontend</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="pomodoro.js" defer></script>
-    <script src="main.js" defer></script>
-    <script src="lesson.js" defer></script>
   </head>
   <body>
-    <h1>📅 Идеальный трекер изучения языков за 90 дней</h1>
-    <h3>Для Шурика</h3>
-    <div id="pomodoro">
-      <h2>⏰ Таймер Помодоро</h2>
-      <div id="timer">25:00</div>
-      <p>Сегодня Pomodоро: <span id="pomodoro-count">0</span></p>
-      <button id="start-btn">Старт</button>
-      <button class="pause-btn" disabled>Пауза</button>
-      <button id="reset-btn">Сброс</button>
-      <p id="status">Статус: Ожидание</p>
-    </div>
+    <header>
+      <h1>📅 Трекер изучения Frontend</h1>
+      <p>Изучай и следи за прогрессом обучения</p>
 
-    <audio
-      id="end-sound"
-      src="https://www.soundjay.com/buttons/sounds/beep-07.mp3"
-    ></audio>
+      <!-- Прогресс -->
+      <div id="progress-bar">
+        <div class="progress-info">
+          <span>Пройдено:</span>
+          <strong
+            ><span id="completed-count">0</span> /
+            <span id="total-count">0</span></strong
+          >
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-track"><div id="progress-fill"></div></div>
+      </div>
 
-    <div id="progress-bar">
-      <h2>📊 Твой прогресс</h2>
-      <p>
-        <strong>Пройдено:</strong> <span id="completed-count">0</span> / 90 дней
-      </p>
-      <div class="progress-track"><div id="progress-fill"></div></div>
-      <p><strong>Завершено:</strong> <span id="progress-percent">0%</span></p>
-    </div>
+      <!-- Кнопки выбора курса -->
+      <div id="module-buttons">
+        <button data-module="htmlcss" class="retro active">HTML & CSS</button>
+        <button data-module="js" class="retro">JavaScript</button>
+        <button data-module="git" class="retro">Git</button>
+        <button data-module="react" class="retro">React</button>
+        <button data-module="practice" class="retro">Практика React</button>
+        <button data-module="backend" class="retro">Backend</button>
+        <button data-module="ts" class="retro">TypeScript</button>
+      </div>
+    </header>
 
-    <div id="language-buttons" style="margin-bottom: 20px; text-align: center">
-      <button data-lang="js">JavaScript</button>
-      <button data-lang="golang">Golang</button>
-      <button data-lang="rust">Rust</button>
-    </div>
+    <!-- Контент -->
+    <main id="content">
+      <!-- Здесь будут загружаться модули -->
+    </main>
 
-    <table id="plan-table">
-      <thead>
-        <tr>
-          <th>День</th>
-          <th>Тема</th>
-          <th>Задание</th>
-          <th>Ресурсы</th>
-          <th>Пример/Синтаксис</th>
-          <th>Выполнено</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <div class="lessons-list" id="lessons"></div>
+    <script src="main.js"></script>
   </body>
 </html>
