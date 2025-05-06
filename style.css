@@ -18,6 +18,23 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.header__title {
+  margin: 0 auto;
+  max-width: 800px;
+  height: 120px;
+  background-size: cover; /* Растягиваем фон */
+  background-position: center; /* Центрируем */
+  background-repeat: no-repeat; /* Не повторять */
+  color: #333; /* Чтобы текст был виден */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
 #module-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -167,4 +184,45 @@ header {
 }
 ul {
   list-style-type: none;
+}
+
+/* === Адаптация под маленькие экраны === */
+@media (max-width: 768px) {
+  .header__title h1 {
+    font-size: 1.6em;
+    padding: 12px;
+  }
+
+  .header-subtitle {
+    font-size: 0.9em;
+  }
+
+  .module-btn {
+    flex: 1 1 calc(50% - 5px); /* По 2 кнопки в ряд на мобильных */
+    font-size: 0.95em;
+  }
+
+  .progress-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__title h1 {
+    font-size: 1.4em;
+    padding: 6px;
+  }
+  .module-btn {
+    flex: 1 1 100%; /* Одна кнопка в ряд на очень маленьких экранах */
+  }
+
+  .progress-info {
+    font-size: 0.85em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #progress-fill {
+    font-size: 10px;
+  }
 }
